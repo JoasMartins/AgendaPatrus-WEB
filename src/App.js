@@ -7,7 +7,7 @@ function App() {
   document.title = "Agenda Patrus - Download"
 
   const handleDownload = () => {
-    const apkFileName = 'AgendaPatrus.apk';
+    const apkFileName = 'AgendaPatrusNOVO.apk';
     const apkFilePath = process.env.PUBLIC_URL + '/' + apkFileName;
 
     const downloadLink = document.createElement('a');
