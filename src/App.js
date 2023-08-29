@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
-  document.title = "Agenda Patrus - Download"
+  //document.title = "Agenda Patrus - Download"
 
   const handleDownload = () => {
     const apkFileName = 'AgendaPatrusNOVO.apk';
