@@ -14,9 +14,11 @@ function Download() {
     downloadLink.href = apkFilePath;
     downloadLink.download = apkFileName;
     downloadLink.click();
+    /*
     setTimeout(() => {
       window.location.href = "/"
     }, 3000)
+    */
   };
 
   handleDownload()
