@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 function Download() {
+  
 
   const handleDownload = () => {
     const apkFileName = appData.apkname;
@@ -21,7 +22,9 @@ function Download() {
     */
   };
 
-  handleDownload()
+  //  AO PUBLICAR O APP, LIBERAR ESSA FUNÇÃO
+  //  handleDownload()
+  window.location.href = "/"
 
   return (
     <div>
@@ -38,10 +41,10 @@ function Download() {
           justifyContent: "center",
           marginTop: 15
         }}>
-        <h1 style={{
-          fontSize: 25,
-          color: "#fff"
-        }}>O download do aplicativo está sendo iniciado...</h1>
+          <h1 style={{
+            fontSize: 25,
+            color: "#fff"
+          }}>O download do aplicativo está sendo iniciado...</h1>
         </div>
       </div>
 

@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Index from './routes';
 import Download from './routes/download';
+import Contratar from './routes/contratar';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/download",
     Component: Download
+  },
+  {
+    path: "/contratar",
+    Component: Contratar
   }
 ])
 

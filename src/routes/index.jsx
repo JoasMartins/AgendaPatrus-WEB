@@ -1,12 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faHandshake } from '@fortawesome/free-solid-svg-icons';
 import appData from "../appData.json"
+import "../css/index.css"
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 function Index() {
+
     const handleDownload = () => {
         const apkFileName = appData.apkname;
         const apkFilePath = process.env.PUBLIC_URL + '/' + apkFileName;
@@ -17,9 +19,13 @@ function Index() {
         downloadLink.click();
     };
 
+    const handleHire = () => {
+        window.location.href = "/contratar"
+    }
+
     return (
         <div className="App">
-            <Header/>
+            <Header />
 
             <main>
                 <div className='main'>
@@ -28,17 +34,37 @@ function Index() {
                         <h2 className='main_subtitleText'>O aplicativo para organizar seus estudos na E. E. Sebastião Patrus de Souza</h2>
                     </div>
 
-                    <div className='main_areaDownload'>
-                        <div>
-                            <h3>Clique no botão ao lado para iniciar o download do App.</h3>
-                            <p>Certifique-se de que nas configurações do seu dispositivo a opção esteja ativada. Não sabe como ativar? <a href='https://www.showmetech.com.br/instalando-aplicativos-android-de-fontes-desconhecidas/' target="_blank" rel="noopener noreferrer">Clique aqui</a>.</p>
+                    <div className='areaActions'>
+                        <div className='Hire'>
+                            <div className='texts'>
+                                <h3>Contratar o aplicativo para a sua escola:</h3>
+                                <p>Ao contratar o Agenda Patrus para a sua escola, o nome do app será mudado para o do seu colégio, assim como sua foto, suas cores e tudo oque está associado a identidade visual, fazendo com que o seu app seja 100% desvínculado a E. E. Sebastião Patrus de Souza.</p>
+                                <p>Aperte o botão ao lado para contratar o aplicativo.</p>
+                            </div>
+                            <button onClick={handleHire} className='areaActionButton'>
+                                <FontAwesomeIcon icon={faHandshake} className='iconButton' />
+                                <div className='barraDivisoria' />
+                                <p>Contratar</p>
+                            </button>
                         </div>
-                        <button onClick={handleDownload} className='main_buttonDownload'>
-                            <FontAwesomeIcon icon={faDownload} className='main_iconButton' />
-                            <div className='barraDivisoria' />
-                            <p className='textDownload'>Baixar</p>
-                        </button>
+
+                        <div className='Download'>
+                            <div className='texts'>
+                                <h3>Clique no botão ao lado para iniciar o download do App.</h3>
+                                <p>Certifique-se de que nas configurações do seu dispositivo a opção esteja ativada. Não sabe como ativar? <a href='https://www.showmetech.com.br/instalando-aplicativos-android-de-fontes-desconhecidas/' target="_blank" rel="noopener noreferrer">Clique aqui</a>.</p>
+                            </div>
+                            <div className="alert">
+                                <button onClick={handleDownload} disabled={true} className='areaActionButton'>
+                                    <FontAwesomeIcon icon={faDownload} className='iconButton' />
+                                    <div className='barraDivisoria' />
+                                    <p>Baixar</p>
+                                </button>
+                                <p className='text1'>Download indiponível!</p>
+                                <p className='text2'>Aplicativo ainda não foi lançado.</p>
+                            </div>
+                        </div>
                     </div>
+
                     <p className='main_text'>Um aplicativo móvel de uso simples com um propósito único: ajudar na organização dos estudos e realização de tarefas da escola. Feito com as funções necessárias para que um aluno possa planejar suas atividades e matérias com antecedência.</p>
                 </div>
 
@@ -72,7 +98,7 @@ function Index() {
                 </div>
             </main>
 
-            <Footer/>
+            <Footer />
         </div>
     );
 }
